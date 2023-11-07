@@ -25,6 +25,7 @@ const storage = createCookieSessionStorage({
 
 export const register = async (form: RegisterForm) => {
   const exists = await prisma.user.count({ where: { email: form.email } });
+
   if (exists) {
     return json(
       { error: `User already exists with that email` },
@@ -106,6 +107,7 @@ export async function getUser(request: Request) {
 export async function logout(request: Request) {
   const session = await getUserSession(request)
   return redirect('/login', {
+    
     headers: {
       'Set-Cookie': await storage.destroySession(session),
     },
