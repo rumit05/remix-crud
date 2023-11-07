@@ -1,11 +1,7 @@
 {
-    "name": "remix-crud",
-    "version": 2,
-    "builds": [
-      {
-        "src": "public/*",
-        "use": "@vercel/static"
-      }
-    ]
+  "build": {
+    "env": {
+      "ENABLE_FILE_SYSTEM_API": "1"
+    }
   }
-  
+}
