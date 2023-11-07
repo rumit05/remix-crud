@@ -4,7 +4,8 @@
     "builds": [
       {
         "src": "public/*",
-        "use": "https://vercel.com/rumit05s-projects/remix-crud"
+        "use": "@vercel/static"
       }
     ]
   }
+  
